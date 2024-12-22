@@ -1,0 +1,73 @@
+@use "../../../../styles.scss" as *;
+
+main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    // align-items: center;
+
+    .side_nav{
+        width: 8%;
+        border-right: 1px solid rgb(218, 218, 218);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo{
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button{
+            cursor: pointer;
+        }
+    }
+
+    .body{
+        width: 92%;
+        height: 100%;
+        .header{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .search{
+                width: 40%;
+                height: 100%;
+                display: flex;
+                position: relative;
+                padding: theme-get(spaces, xxs) + .2 theme-get(spaces, xs);
+                input{
+                    width: 100%;
+                    height: 100%;
+                    padding: theme-get(spaces, xxs) theme-get(spaces, xs);
+                    background-color: rgb(240, 240, 240);
+                    border-radius: theme-get(spaces, xxl);
+                    border: none;
+                    outline: none;
+                    transition: all .3s ease-in-out;
+                    &:focus{
+                        background-color:  rgb(228, 228, 228);
+                        outline: none;
+                    }
+                }
+
+                img{
+                    position: absolute;
+                    right: theme-get(spaces, sm);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: theme-get(spaces, sm);
+                }
+            }
+        }
+        .content{
+            height: 90%;
+            overflow: hidden
+        }
+    }
+}

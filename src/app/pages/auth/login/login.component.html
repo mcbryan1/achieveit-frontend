@@ -1,0 +1,43 @@
+<main>
+    <div class="title">
+      <p>Login to <span>Achieve.IT</span></p>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="form_container">
+        <div class="input_container">
+          <label>Username<span>*</span></label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            formControlName="username"
+          />
+        </div>
+        <div class="input_container">
+          <label for="password">Password<span>*</span></label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            formControlName="password"
+            [type]="isPasswordVissible ? 'text' : 'password'"
+          />
+          @if (isPasswordVissible) {
+            <img src="{{_images.eyeClosed}}" alt="eye" (click)="toggleVissibility()">
+          } @else {
+            <img src="{{_images.eyeOpen}}" alt="eye" (click)="toggleVissibility()">
+          }
+        </div>
+        <div class="forgot_pw" (click)="gotoForgotPassword()">
+          <p>Forgot Password?</p>
+        </div>
+  
+        <div class="button">
+          <app-button [text]="'Login'" [isLoading]="isLoading" (onClick)="onSubmit()"></app-button>
+        </div>
+      </div>
+    </form>
+    <div class="signup">
+      <p>Don't have an account? </p>
+      <a routerLink="/auth/signup">Sign Up</a>
+    </div>
+  </main>

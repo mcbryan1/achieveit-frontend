@@ -1,0 +1,8 @@
+<div class="button" [ngStyle]="{ 'background-color': backgroundColor || defaultBackgroundColor }" (click)="handleClick()">
+    @if (!isLoading) {
+    <p>{{ text }}</p>
+    } @if (isLoading) {
+    <app-bubble-loader></app-bubble-loader>
+    }
+  </div>
+  

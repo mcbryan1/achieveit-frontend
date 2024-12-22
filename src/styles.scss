@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:map";
+@use "sass:meta";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+// @import "primeng/resources/themes/lara-light-blue/theme.css";
+// @import "primeng/resources/primeng.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+// $primary-color: #6c63ff;
+// $primary-color-dark: #4f46e5;
+// $gray: #cccccc;
+
+// //Sizes
+// $fs-xxs: 0.8rem;
+// $fs-xs: 1rem;
+// $fs-sm: 1.2rem;
+// $fs-md: 1.5rem;
+// $fs-lg: 2rem;
+// $fs-xl: 2.5rem;
+// $fs-xxl: 3rem;
+// $fs-xxxl: 4rem;
+// $fs-xxxxl: 5rem;
+
+// //Weights
+// $fw-thin: 100;
+// $fw-light: 300;
+// $fw-normal: 400;
+// $fw-bold: 700;
+// $fw-bolder: 900;
+
+// //****************************** Spaces
+// $main-app-space: 7%;
+// $main-app-space-mobile: 4%;
+// $space-xxs: 0.3rem;
+// $space-xs: 1rem;
+// $space-sm: 1.5rem;
+// $space-md: 2rem;
+// $space-lg: 3rem;
+// $space-xl: 4rem;
+// $space-xxl: 5rem;
+// $space-xxxl: 6rem;
+
+// //******************************* Breakpoints
+// $breakpoint-sm: 576px;
+// $breakpoint-md: 768px;
+// $breakpoint-lg: 992px;
+// $breakpoint-xl: 1200px;
+
+// New Sass module system
+
+$theme: (
+  colors: (
+    primary: #6c63ff,
+    primary-dark: #4f46e5,
+    gray: #cccccc,
+  ),
+  fontSizes:(
+    xxs: 0.8rem,
+    xs: 1rem,
+    sm: 1.2rem,
+    md: 1.5rem,
+    lg: 2rem,
+    xl: 2.5rem,
+    xxl: 3rem,
+    xxxl: 4rem,
+    xxxxl: 5rem,
+  ),
+  weights: (
+    thin: 100,
+    light: 300,
+    normal: 400,
+    bold: 700,
+    bolder: 900,
+  ),
+  spaces: (
+    main-app-space: 7%,
+    main-app-space-mobile: 4%,
+    xxs: 0.3rem,
+    xs: 1rem,
+    sm: 1.5rem,
+    md: 2rem,
+    lg: 3rem,
+    xl: 4rem,
+    xxl: 5rem,
+    xxxl: 6rem,
+  ),
+  breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+  ),
+);
+
+@function theme-get($keys...) {
+  @return map.get($theme, $keys...);
+}
+
+//******************************* Mixin for media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: theme-get(breakpoints, sm)) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: theme-get(breakpoints, md)) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    @media (max-width: theme-get(breakpoints, lg)) {
+      @content;
+    }
+  } @else if $breakpoint == large-screens {
+    @media (max-width: theme-get(breakpoints, xl)) {
+      @content;
+    }
+  }
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  width: 0.3rem;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+// When the isnt't scrolling, hide the scrollbar
+::-webkit-scrollbar-thumb:active {
+  background: #b3b3b3;
+}

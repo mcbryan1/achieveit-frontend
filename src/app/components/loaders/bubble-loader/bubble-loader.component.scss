@@ -1,0 +1,55 @@
+.bounces {
+    .bounce_one {
+      // make the div smaller circles and bounce them
+      height: 10px;
+      width: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1s infinite ease-in-out;
+      animation-delay: 0.2s;
+      margin-right: 0.5rem;
+    }
+    .bounce_two {
+      height: 10px;
+      width: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1s infinite ease-in-out;
+      animation-delay: 0.3s;
+      margin-right: 0.5rem;
+    }
+  
+    .bounce_three {
+      height: 10px;
+      width: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1s infinite ease-in-out;
+      animation-delay: 0.4s;
+      margin-right: 0.5rem;
+    }
+    .bounce_four {
+      height: 10px;
+      width: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1s infinite ease-in-out;
+      animation-delay: 0.5s;
+    }
+  
+    @keyframes bounce {
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+  }
+  

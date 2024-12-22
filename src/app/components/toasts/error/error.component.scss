@@ -1,0 +1,79 @@
+.success {
+    box-shadow: -2.52153px 3.36204px 36.9825px rgba(0, 0, 0, 0.25);
+    background: #FFEBEB;
+    backdrop-filter: blur(6.5px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    z-index: 999;
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+  
+    .left {
+      width: 70%;
+      height: 100%;
+      padding:  .5rem;
+  
+      h1 {
+        color: #E32826;
+        font-size: .8rem;
+        font-weight: 600;
+      }
+      p{
+          color: #000;
+          font-size: .6rem;
+          font-weight: 400;
+          margin-top: .5rem;
+      }
+    }
+    .right {
+      width: 30%;
+      height: inherit;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 5px 5px 0;
+  
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
+  
+       .close {
+        position: absolute;
+        top: .3rem;
+        right: .3rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+
+/* Apply the slideDown animation */
+.success {
+    animation: slideDown 0.3s, slideOut 0.3s 2.5s;
+    -webkit-animation: slideDown 0.3s, slideOut 0.3s 2.5s;
+    -moz-animation: slideDown 0.3s, slideOut 0.3s 2.5s;
+    -o-animation: slideDown 0.3s, slideOut 0.3s 2.5s;
+    -ms-animation: slideDown 0.3s, slideOut 0.3s 2.5s;
+}

@@ -1,0 +1,27 @@
+@use "../../../styles.scss" as *;
+
+
+
+.button {
+    padding:  theme-get(spaces, xxs) + 0.5rem 0;
+    background-color: theme-get(colors, primary);
+    border-radius: theme-get(spaces, xxs);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: theme-get(spaces, lg) + 0.5rem;  
+    overflow: hidden;
+  
+    &:hover {
+      background-color: black;
+    }
+  
+    p {
+      color: white;
+      font-size: theme-get(fontSizes, xxs);
+      font-weight: 500;
+    }
+  }

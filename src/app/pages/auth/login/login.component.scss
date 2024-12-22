@@ -1,0 +1,113 @@
+@use "../../../../styles.scss" as *;
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+
+  .title {
+    margin-bottom: theme-get(spaces, sm);
+
+    p {
+      // color: $primary-color-dark;
+      font-weight: theme-get(weights, bold);
+      font-size: theme-get(fontSizes, fs);
+    }
+    span{
+      color: theme-get(colors, primary);
+      font-size: theme-get(fontSizes, sm);
+    }
+  }
+
+  .form_container {
+    .input_container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: theme-get(spaces, xs);
+      position: relative;
+
+      label {
+        font-size: theme-get(fontSizes, xxs);
+        font-weight: theme-get(weights, bold);
+        margin-bottom: theme-get(spaces, xxs);
+
+        span {
+          color: red;
+        }
+      }
+      input {
+        padding: theme-get(spaces, xxs) + 0.3rem theme-get(spaces, xs);
+        border: 1px solid gray;
+        border-radius: theme-get(spaces, xxs);
+
+        &:focus {
+          border: 1px solid theme-get(colors, primary);
+          outline: none;
+        }
+      }
+
+      img{
+        position: absolute;
+        right: 1rem;
+        top: 55%;
+        // transform: translateY(-50%);
+        width: theme-get(spaces, xs);
+        cursor: pointer;
+      }
+    }
+    .error {
+      p {
+        color: red;
+        font-size: theme-get(fontSizes, xxs);
+      }
+    }
+    .forgot_pw {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: theme-get(spaces, xs);
+
+      p {
+        color: gray;
+        font-size: theme-get(fontSizes, xxs);
+        cursor: pointer;
+        transition: 0.5s all ease-in-out;
+
+        &:hover {
+          color: theme-get(colors, primary);
+        }
+      }
+    }
+    .button{
+        margin-top: theme-get(spaces, sm);
+    }
+  }
+
+  .signup{
+    display: flex;
+    justify-content: center;
+    margin-top: theme-get(spaces, sm);
+    align-items: center;
+
+    p {
+      color: gray;
+      font-size: theme-get(fontSizes, xxs);
+      transition: 0.5s all ease-in-out;
+    }
+
+    a {
+      color: theme-get(colors, primary);
+      font-weight: theme-get(weights, bold);
+      margin-left: theme-get(spaces, xxs);
+      transition: 0.5s all ease-in-out;
+      font-size: theme-get(fontSizes, xxs);
+      cursor: pointer;
+
+      &:hover {
+        color: theme-get(colors, primary-dark);
+      }
+    }
+  }
+}
