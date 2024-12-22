@@ -11,4 +11,7 @@ export class ImagesService {
   close = 'assets/images/icons/close.svg';
   add = 'assets/images/icons/add.png';
   search = 'assets/images/icons/search.png';
+  empty = 'assets/images/icons/empty.png';
+
+  emptyGif = 'assets/gif/empty.gif';
 }

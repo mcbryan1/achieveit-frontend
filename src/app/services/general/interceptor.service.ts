@@ -14,7 +14,7 @@ export class InterceptorService {
   
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const userToken = JSON.parse(sessionStorage.getItem('token')!);
+    const userToken = sessionStorage.getItem('token')!;
 
     let authReq = req;
     if (userToken) {
@@ -32,7 +32,7 @@ export class InterceptorService {
         } else {
  
           errorMsg = `${error.error.resp_desc}`;          
-          if (error.status === 401 && errorMsg === 'Invalid request token') {
+          if (error.status === 401 && errorMsg === 'Token is expired') {
             this._router.navigate(['/']);
           }
           if (error.status === 500) {

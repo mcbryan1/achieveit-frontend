@@ -1,20 +1,50 @@
 <main>
-    <section class="side_nav">
-        <div class="logo">
-            <p>Achieve.iT</p>
-        </div>
-        <div class="button">
-            <img src="{{_images.add}}" alt="add">
-        </div>
-    </section>
-    <section class="body">
-        <div class="header">
-            <div class="search">
-                <img src="{{_images.search}}" alt="search">
-                <input type="text" placeholder="Search">
+  <section class="side_nav">
+    <div class="logo">
+      <p>Achieve.iT</p>
+    </div>
+    <div class="button">
+      <img src="{{ _images.add }}" alt="add" />
+    </div>
+  </section>
+  <section class="body">
+    <div class="header">
+      <div class="search">
+        <img src="{{ _images.search }}" alt="search" />
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div class="content">
+      <div class="info">
+        @for (goal of goals; track $index) {
+        <div class="card" [style.background-color]="goal.color" (click)="openSlider(goal)">
+          <div class="card_header">
+            <h3>{{ goal.title }}</h3>
+          </div>
+          <div class="card_body">
+            @for (item of goal.milestones | slice:0:5; track $index) {
+            <div class="milestone" [class.completed]="item.completed" >
+              <span>{{ $index + 1 }}.</span>
+              <p>{{ item.title }}</p>
             </div>
-
+            } @empty {
+                <div class="empty">
+                    <img src="{{_images.empty}}" alt="empty">
+                    <p>No milestones yet</p>
+                    <div class="button">
+                        <p>+</p>
+                    </div>
+                </div>
+            }
+          </div>
         </div>
-        <div class="content"></div>
-    </section>
+        }
+      </div>
+      @if (showSlider) {
+        <div class="overlay">
+            <div class="filter_container"></div>
+          </div>
+      }
+    </div>
+  </section>
 </main>
